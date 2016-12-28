@@ -4,11 +4,15 @@
 	I want to be told the sum of two numbers
 
 @mytag
-Scenario: Add two numbers
+Scenario Outline: Add two numbers
 	Given I have entered 50 into the calculator
 	And I have entered 70 into the calculator
 	When I press add
 	Then the result should be 120 on the screen
+Examples:
+    | First | Second | Result |
+    | 50    | 70     | 120    |
+    | 20    | 50     | 70     |
 
 @mytag @super_super_tag
 Scenario: Add three numbers
