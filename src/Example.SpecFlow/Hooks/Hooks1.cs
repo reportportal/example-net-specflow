@@ -7,7 +7,9 @@ namespace Example.SpecFlow.Hooks
     [Binding]
     public sealed class Hooks1
     {
-        [BeforeTestRun(Order = 0)]
+        // BeforeTestRun hook order should be set to the value that is lower than -20000
+        // if you plan to use ReportPortalAddin.BeforeRunStarted event.
+        [BeforeTestRun(Order = -30000)]
         public static void BeforeTestRunPart()
         {
             ReportPortalAddin.BeforeFeatureStarted += ReportPortalAddin_BeforeFeatureStarted;
