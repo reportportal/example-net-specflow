@@ -52,7 +52,7 @@
       <HintPath>..\packages\ReportPortal.Shared.2.0.0-beta4\lib\net45\ReportPortal.Shared.dll</HintPath>
     </Reference>
     <Reference Include="ReportPortal.SpecFlowPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReportPortal.SpecFlow.1.2.2-beta-23\lib\ReportPortal.SpecFlowPlugin.dll</HintPath>
+      <HintPath>..\packages\ReportPortal.SpecFlow.1.2.2\lib\ReportPortal.SpecFlowPlugin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

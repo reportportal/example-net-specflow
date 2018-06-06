@@ -52,6 +52,7 @@ Task("Build")
 
 Task("Run-Unit-Tests")
 	.IsDependentOn("Build")
+	.ContinueOnError()
 	.Does(() =>
 {
 	NUnit3("./src/**/bin/" + configuration + "/Example.SpecFlow.dll", new NUnit3Settings {

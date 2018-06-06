@@ -38,5 +38,12 @@ namespace Example.SpecFlow.StepDefenitions
         {
             
         }
+
+        [Then(@"I execute failed test")]
+        public void ThenIExecuteFailedTest()
+        {
+            throw new Exception("This step raises an exception.");
+        }
+
     }
 }
