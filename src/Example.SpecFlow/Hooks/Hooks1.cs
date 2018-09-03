@@ -1,5 +1,8 @@
-﻿using ReportPortal.SpecFlowPlugin;
+﻿using ReportPortal.Shared;
+using ReportPortal.SpecFlowPlugin;
 using ReportPortal.SpecFlowPlugin.EventArguments;
+using System.IO;
+using System.Reflection;
 using TechTalk.SpecFlow;
 
 namespace Example.SpecFlow.Hooks
@@ -26,6 +29,16 @@ namespace Example.SpecFlow.Hooks
         {
             // Adding scenario tag on runtime
             e.TestItem.Tags.Add("runtime_scenario_tag");
+        }
+
+        [AfterScenario]
+        public void AfterScenario(ScenarioContext context)
+        {
+            if (context.ScenarioExecutionStatus == ScenarioExecutionStatus.TestError)
+            {
+                var filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\cat.png";
+                Bridge.LogMessage(ReportPortal.Client.Models.LogLevel.Debug, "This cat came from AfterScenario hook {rp#file#" + filePath + "}");
+            }
         }
     }
 }
