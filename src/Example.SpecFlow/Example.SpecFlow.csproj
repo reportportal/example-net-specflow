@@ -51,8 +51,8 @@
     <Reference Include="ReportPortal.Shared, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReportPortal.Shared.2.0.3\lib\net45\ReportPortal.Shared.dll</HintPath>
     </Reference>
-    <Reference Include="ReportPortal.SpecFlowPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ReportPortal.SpecFlow.1.2.4\lib\ReportPortal.SpecFlowPlugin.dll</HintPath>
+    <Reference Include="ReportPortal.SpecFlowPlugin, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportPortal.SpecFlow.1.3.0\lib\net45\ReportPortal.SpecFlowPlugin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -100,7 +100,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="ReportPortal.SpecFlowPlugin.dll.config">
+    <None Include="ReportPortal.config.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Scenarios\Feature1.feature">
