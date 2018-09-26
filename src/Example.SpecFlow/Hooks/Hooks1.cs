@@ -17,6 +17,19 @@ namespace Example.SpecFlow.Hooks
         {
             ReportPortalAddin.BeforeFeatureStarted += ReportPortalAddin_BeforeFeatureStarted;
             ReportPortalAddin.BeforeScenarioStarted += ReportPortalAddin_BeforeScenarioStarted;
+            ReportPortalAddin.BeforeScenarioFinished += ReportPortalAddin_BeforeScenarioFinished;
+        }
+
+        private static void ReportPortalAddin_BeforeScenarioFinished(object sender, TestItemFinishedEventArgs e)
+        {
+            if (ScenarioContext.Current.TestError != null && ScenarioContext.Current.ScenarioInfo.Title == "System Error")
+            {
+                e.TestItem.Issue = new ReportPortal.Client.Models.Issue
+                {
+                    Type = ReportPortal.Client.Models.WellKnownIssueType.SystemIssue,
+                    Comment = "my custom system error comment"
+                };
+            }
         }
 
         private static void ReportPortalAddin_BeforeFeatureStarted(object sender, TestItemStartedEventArgs e)
