@@ -36,7 +36,10 @@ namespace Example.SpecFlow.StepDefenitions
         [Then("the result should be (.*) on the screen")]
         public void ThenTheResultShouldBe(int result)
         {
-            
+            if (result == 666)
+            {
+                throw new Exception("Daemon here.");
+            }
         }
 
         [Then(@"I execute failed test")]
