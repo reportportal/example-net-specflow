@@ -1,6 +1,7 @@
 ﻿using ReportPortal.Shared;
 using ReportPortal.SpecFlowPlugin;
 using ReportPortal.SpecFlowPlugin.EventArguments;
+using System;
 using System.IO;
 using System.Reflection;
 using TechTalk.SpecFlow;
@@ -22,9 +23,15 @@ namespace Example.SpecFlow.Hooks
         [BeforeTestRun(Order = -30000)]
         public static void BeforeTestRunPart()
         {
+            ReportPortalAddin.BeforeRunStarted += ReportPortalAddin_BeforeRunStarted;
             ReportPortalAddin.BeforeFeatureStarted += ReportPortalAddin_BeforeFeatureStarted;
             ReportPortalAddin.BeforeScenarioStarted += ReportPortalAddin_BeforeScenarioStarted;
             ReportPortalAddin.BeforeScenarioFinished += ReportPortalAddin_BeforeScenarioFinished;
+        }
+
+        private static void ReportPortalAddin_BeforeRunStarted(object sender, RunStartedEventArgs e)
+        {
+            e.Launch.Description = $"OS: {Environment.OSVersion.VersionString}";
         }
 
         private static void ReportPortalAddin_BeforeScenarioFinished(object sender, TestItemFinishedEventArgs e)
