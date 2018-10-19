@@ -11,13 +11,6 @@ namespace Example.SpecFlow.Hooks
     [Binding]
     public sealed class Hooks1
     {
-        private static ScenarioContext _scenarioContext;
-
-        public Hooks1(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
-
         // BeforeTestRun hook order should be set to the value that is lower than -20000
         // if you plan to use ReportPortalAddin.BeforeRunStarted event.
         [BeforeTestRun(Order = -30000)]
@@ -36,7 +29,7 @@ namespace Example.SpecFlow.Hooks
 
         private static void ReportPortalAddin_BeforeScenarioFinished(object sender, TestItemFinishedEventArgs e)
         {
-            if (_scenarioContext.TestError != null && _scenarioContext.ScenarioInfo.Title == "System Error")
+            if (e.ScenarioContext.TestError != null && e.ScenarioContext.ScenarioInfo.Title == "System Error")
             {
                 e.TestItem.Issue = new ReportPortal.Client.Models.Issue
                 {
