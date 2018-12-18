@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    {
+      "name": "ReportPortal",
+      "type": "Runtime"
+    }
+  ],
+  "stepAssemblies": [
+    {
+      "assembly": "ReportPortal.SpecFlowPlugin"
+    }
+  ]
+}

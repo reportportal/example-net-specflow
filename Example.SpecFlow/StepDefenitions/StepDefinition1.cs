@@ -1,10 +1,7 @@
 ﻿using ReportPortal.Shared;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace Example.SpecFlow.StepDefenitions
