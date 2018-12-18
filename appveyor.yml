@@ -1,7 +1,4 @@
-﻿configuration:
-  - Release
-
-build_script:
+﻿build_script:
   - dotnet build
 
 test_script:

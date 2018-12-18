@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFrameworks>net471;netcoreapp2.1;</TargetFrameworks>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-    <PackageReference Include="ReportPortal.SpecFlow" Version="2.0.0-beta.1" />
+    <PackageReference Include="ReportPortal.SpecFlow" Version="2.0.0-beta.2" />
     <PackageReference Include="SpecFlow" Version="3.0.155-beta" />
     <PackageReference Include="SpecFlow.MsTest" Version="3.0.155-beta" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.155-beta" />
@@ -21,9 +21,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="ReportPortal.config.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="SpecFlow.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
