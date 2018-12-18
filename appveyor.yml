@@ -2,5 +2,5 @@
   - cmd: dotnet build
 
 test:
-  asseblies:
+  assemblies:
     - '**/Example.SpecFlow.dll'
