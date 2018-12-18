@@ -1,3 +1,8 @@
-﻿build_script:
-  - cmd: dotnet build
-  - cmd: dotnet test --no-build & exit 0
+﻿configuration:
+  - Release
+
+build_script:
+  - dotnet build
+
+test_script:
+  - dotnet test --no-build & exit 0
