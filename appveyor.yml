@@ -1,6 +1,2 @@
 ﻿build_script:
-  - cmd: dotnet build
-
-test:
-  assemblies:
-    - '**/Example.SpecFlow.dll'
+  - cmd: dotnet test
