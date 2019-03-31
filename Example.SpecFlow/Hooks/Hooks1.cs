@@ -24,14 +24,14 @@ namespace Example.SpecFlow.Hooks
 
         private static void ReportPortalAddin_BeforeRunStarted(object sender, RunStartedEventArgs e)
         {
-            e.Launch.Description = $"OS: {Environment.OSVersion.VersionString}";
+            e.StartLaunchRequest.Description = $"OS: {Environment.OSVersion.VersionString}";
         }
 
         private static void ReportPortalAddin_BeforeScenarioFinished(object sender, TestItemFinishedEventArgs e)
         {
             if (e.ScenarioContext.TestError != null && e.ScenarioContext.ScenarioInfo.Title == "System Error")
             {
-                e.TestItem.Issue = new ReportPortal.Client.Models.Issue
+                e.FinishTestItemRequest.Issue = new ReportPortal.Client.Models.Issue
                 {
                     Type = ReportPortal.Client.Models.WellKnownIssueType.SystemIssue,
                     Comment = "my custom system error comment"
@@ -42,13 +42,13 @@ namespace Example.SpecFlow.Hooks
         private static void ReportPortalAddin_BeforeFeatureStarted(object sender, TestItemStartedEventArgs e)
         {
             // Adding feature tag on runtime
-            e.TestItem.Tags.Add("runtime_feature_tag");
+            e.StartTestItemRequest.Tags.Add("runtime_feature_tag");
         }
 
         private static void ReportPortalAddin_BeforeScenarioStarted(object sender, TestItemStartedEventArgs e)
         {
             // Adding scenario tag on runtime
-            e.TestItem.Tags.Add("runtime_scenario_tag");
+            e.StartTestItemRequest.Tags.Add("runtime_scenario_tag");
         }
 
         [AfterScenario]
