@@ -1,0 +1,5 @@
+﻿build_script:
+  - dotnet build
+
+test_script:
+  - dotnet test --no-build & exit 0
