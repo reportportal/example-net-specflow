@@ -20,6 +20,8 @@ namespace Example.SpecFlow.Hooks
             ReportPortalAddin.BeforeFeatureStarted += ReportPortalAddin_BeforeFeatureStarted;
             ReportPortalAddin.BeforeScenarioStarted += ReportPortalAddin_BeforeScenarioStarted;
             ReportPortalAddin.BeforeScenarioFinished += ReportPortalAddin_BeforeScenarioFinished;
+
+            ReportPortalAddin.AfterFeatureFinished += ReportPortalAddin_AfterFeatureFinished;
         }
 
         private static void ReportPortalAddin_BeforeRunStarted(object sender, RunStartedEventArgs e)
@@ -59,6 +61,14 @@ namespace Example.SpecFlow.Hooks
                 var filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\cat.png";
                 Bridge.LogMessage(ReportPortal.Client.Models.LogLevel.Debug, "This cat came from AfterScenario hook {rp#file#" + filePath + "}");
             }
+        }
+
+        private static void ReportPortalAddin_AfterFeatureFinished(object sender, TestItemFinishedEventArgs e)
+        {
+#if NETCOREAPP
+            // Workaround how to avoid issue https://github.com/techtalk/SpecFlow/issues/1348 (launch doesn't finish on .netcore tests)
+            e.TestReporter.FinishTask.Wait();
+#endif
         }
     }
 }
