@@ -21,7 +21,7 @@ Follow the official guide to create a basic project with the test framework appl
 
 1. The following packages are installed:
 - Microsoft.NETCore.App (pre-installed for .NET Core apps)
-- Microsoft.NET.Test.Sdk (pre-installed for test projectqs)
+- Microsoft.NET.Test.Sdk (pre-installed for test projects)
 - MSTest.TestFramework (pre-installed for MSTest Test Project)
 - SpecFlow
 - SpecFlow.Tools.MsBuild.Generation
@@ -284,14 +284,16 @@ Configuration is complete, so it is the time to make sure integration works.
 Run all tests again and go to Report Portal.
 
 1. Pick the project you pointed to report test results to. In this case it is "demo_project"
-![Report Portal project selection](https://github.com/reportportal/reportportal/blob/master/screenshots/rpProjectSelection.png)
 
+![Report Portal project selection](https://github.com/reportportal/reportportal/blob/master/screenshots/rpProjectSelection.png)
 2. Open launches/debug tab to see test results
 
 There 2 screens where test runs info can be displayed on the platform: debug and launches. By default test results appear in `launches` screen, but if test execution was done with Report Portal config property `debug` set to `true`, the results will appear on the debug screen instead. Read here about the screens: https://reportportal.io/docs/View-launches .
 
 Since `debug` is `true` for the current project, test runs appear on `debug` screen.
+
 ![Report Portal. Test runs screen (debug)](https://github.com/reportportal/reportportal/blob/master/screenshots/rpTestRuns.png)
+
 Pay attention how the test run's info reflects configuration set in the test automation project (ReportPortal.config.json):
 - test run title is equal to `launch.name`
 - tags are those specified in `launch.tags`
@@ -307,11 +309,12 @@ Looking inside a feature, "Calculator screen" on example, one can see list of sc
 ![Report Portal. Scenarios for 'Calculator screen' feature](screenshots/rpFeatureScenariosList_calcScreen.png)
 
 And the same for "Calculator operations" feature:
-![Report Portal. Scenarios for 'Calculator operations' feature](https://github.com/reportportal/reportportal/blob/master/screenshots/rpFeatureScenariosList_calcOperations.png)
 
+![Report Portal. Scenarios for 'Calculator operations' feature](https://github.com/reportportal/reportportal/blob/master/screenshots/rpFeatureScenariosList_calcOperations.png)
 
 Going one step deeper test steps are displayed. Here steps for "Substract two numbers" scenario:
 ![Report Portal. Steps of "Substract two numbers" scenario](https://github.com/reportportal/reportportal/blob/master/screenshots/rpScenarioSteps_2numbSubstraction.png)
+
 
 # Next steps
 
