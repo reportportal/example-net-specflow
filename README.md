@@ -234,7 +234,7 @@ Login to a service instance and perform the next steps:
 
 If there no such project, go to `Administrate->Add project` and create it
 
-![Settings menu](https://github.com/reportportal/reportportal/blob/master/screenshots/rpSettingsMenu.png)
+![Settings menu](screenshots/rpSettingsMenu.PNG)
 
 2. Take uuid from `Profile` screen
 
