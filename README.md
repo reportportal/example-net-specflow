@@ -212,7 +212,7 @@ public class CalculatorSpecSteps
 ```
 
 Now tests are ready to be executed. Use `Test Explorer` IDE feature to `Run All` of them.
-![Test run result](https://github.com/reportportal/reportportal/blob/master/screenshots/testRun.png)
+![Test run result](screenshots/testRun.PNG)
 
  In the case of issues, make sure each .feature file has property `Custom Tool` set to an empty field. More info about it here: https://specflow.org/documentation/Generate-Tests-from-MsBuild
 
@@ -285,14 +285,14 @@ Run all tests again and go to Report Portal.
 
 1. Pick the project you pointed to report test results to. In this case it is "demo_project"
 
-![Report Portal project selection](https://github.com/reportportal/reportportal/blob/master/screenshots/rpProjectSelection.png)
+![Report Portal project selection](screenshots/rpProjectSelection.PNG)
 2. Open launches/debug tab to see test results
 
 There 2 screens where test runs info can be displayed on the platform: debug and launches. By default test results appear in `launches` screen, but if test execution was done with Report Portal config property `debug` set to `true`, the results will appear on the debug screen instead. Read here about the screens: https://reportportal.io/docs/View-launches .
 
 Since `debug` is `true` for the current project, test runs appear on `debug` screen.
 
-![Report Portal. Test runs screen (debug)](https://github.com/reportportal/reportportal/blob/master/screenshots/rpTestRuns.png)
+![Report Portal. Test runs screen (debug)](screenshots/rpTestRuns.PNG)
 
 Pay attention how the test run's info reflects configuration set in the test automation project (ReportPortal.config.json):
 - test run title is equal to `launch.name`
@@ -301,19 +301,19 @@ Pay attention how the test run's info reflects configuration set in the test aut
 
 3. Look inside a test run
 
-![Report Portal. Scenarios within a test run](https://github.com/reportportal/reportportal/blob/master/screenshots/rpTestRunScenarios.png)
+![Report Portal. Scenarios within a test run](screenshots/rpTestRunScenarios.PNG)
 
 Pay attention each clause represents a feature with its title and description displayed.
 
 Looking inside a feature, "Calculator screen" on example, one can see list of scenarios executed for the feature:
-![Report Portal. Scenarios for 'Calculator screen' feature](screenshots/rpFeatureScenariosList_calcScreen.png)
+![Report Portal. Scenarios for 'Calculator screen' feature](screenshots/rpFeatureScenariosList_calcScreen.PNG)
 
 And the same for "Calculator operations" feature:
 
-![Report Portal. Scenarios for 'Calculator operations' feature](https://github.com/reportportal/reportportal/blob/master/screenshots/rpFeatureScenariosList_calcOperations.png)
+![Report Portal. Scenarios for 'Calculator operations' feature](screenshots/rpFeatureScenariosList_calcOperations.PNG)
 
 Going one step deeper test steps are displayed. Here steps for "Substract two numbers" scenario:
-![Report Portal. Steps of "Substract two numbers" scenario](https://github.com/reportportal/reportportal/blob/master/screenshots/rpScenarioSteps_2numbSubstraction.png)
+![Report Portal. Steps of "Substract two numbers" scenario](screenshots/rpScenarioSteps_2numbSubstraction.PNG)
 
 
 # Next steps
