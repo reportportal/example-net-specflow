@@ -4,7 +4,6 @@
     <TargetFrameworks>net471;netcoreapp2.1;</TargetFrameworks>
 
     <IsPackable>false</IsPackable>
-    <DebugType>full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
