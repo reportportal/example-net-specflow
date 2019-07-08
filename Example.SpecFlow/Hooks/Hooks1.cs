@@ -2,6 +2,7 @@
 using ReportPortal.SpecFlowPlugin;
 using ReportPortal.SpecFlowPlugin.EventArguments;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using TechTalk.SpecFlow;
