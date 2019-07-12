@@ -11,7 +11,7 @@
     <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="ReportPortal.Extensions.SourceBack" Version="1.0.13" />
-    <PackageReference Include="ReportPortal.SpecFlow" Version="2.0.3" />
+    <PackageReference Include="ReportPortal.SpecFlow" Version="2.1.0" />
     <PackageReference Include="SpecFlow" Version="3.0.225" />
     <PackageReference Include="SpecFlow.MsTest" Version="3.0.225" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
