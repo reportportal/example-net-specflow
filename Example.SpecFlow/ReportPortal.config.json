@@ -1,13 +1,13 @@
 ﻿{
   "$schema": "https://raw.githubusercontent.com/reportportal/agent-net-specflow/master/ReportPortal.SpecFlowPlugin/ReportPortal.config.schema",
   "enabled": true,
-  "server": {
-    "url": "https://rp.epam.com/api/v1/",
-    "project": "default_project",
-    "authentication": {
-      "uuid": "ba7eb7c8-7b33-42f6-8cf0-e9cd26e717f4"
-    }
-  },
+	"server": {
+		"url": "https://web.demo.reportportal.io/api/v1/",
+		"project": "default_personal",
+		"authentication": {
+			"uuid": "73258623-7e6d-47c4-b6af-6adddfd35cde"
+		}
+	},
   "launch": {
     "name": "SpecFlow Demo Launch",
     "description": "this is description",
