@@ -5,13 +5,13 @@
 		"url": "https://web.demo.reportportal.io/api/v1/",
 		"project": "default_personal",
     "authentication": {
-      "uuid": "e4b514e3-4e0b-4325-a10a-2496bdeb52c3"
+      "uuid": "d8467664-4ac8-465d-93ad-b60fba39d2c4"
     }
 	},
   "launch": {
     "name": "SpecFlow Demo Launch",
     "description": "this is description",
     "debugMode": true,
-    "tags": [ "t1", "t2" ]
+    "attributes": [ "t1", "os:win10" ]
   }
 }
