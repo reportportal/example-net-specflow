@@ -14,20 +14,33 @@ namespace Example.SpecFlow.StepDefenitions
         public void WhenIUploadIntoReportPortal(string fileName)
         {
             var filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\" + fileName;
-            Bridge.LogMessage(ReportPortal.Client.Models.LogLevel.Info, "this is my cat {rp#file#" + filePath + "}");
+            Log.Info("this is my cat {rp#file#" + filePath + "}");
         }
 
 
         [Given("I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
         {
-            
+            using (var scope = Log.BeginNewScope("Searching for calculator..."))
+            {
+                scope.Debug("Where is calculator?");
+                Log.Info("Yeah, found it.");
+                scope.Debug($"Typing '{number}'..");
+
+                using (var scope2 = scope.BeginNewScope($"Searching '{number}' button.."))
+                {
+                    Log.Error("I lost my button :(");
+                    scope2.Warn("lucky next time.");
+
+                    scope2.Status = ReportPortal.Shared.Logging.LogScopeStatus.Skipped;
+                }
+            }
         }
 
         [When("I press add")]
         public void WhenIPressAdd()
         {
-            
+
         }
 
         [Then("the result should be (.*) on the screen")]
@@ -43,6 +56,18 @@ namespace Example.SpecFlow.StepDefenitions
         public void ThenIExecuteFailedTest()
         {
             throw new Exception("This step raises an exception.");
+        }
+
+        [When(@"I make a note")]
+        public void WhenIMakeANote(string multilineText)
+        {
+
+        }
+
+        [Then(@"I should buy the following")]
+        public void ThenIShouldBuyTheFollowing(Table table)
+        {
+
         }
 
     }

@@ -9,8 +9,20 @@ Scenario Outline: Parametrized scenario
 	When I press add
 	Then the result should be <c> on the screen
 
-	Examples: 
-	| a | b | c   |
-	| 1 | 2 | 3   |
-	| 2 | 2 | 4   |
-	| 3 | 3 | 666 |
+	Examples:
+		| a | b | c   |
+		| 1 | 2 | 3   |
+		| 2 | 2 | 4   |
+		| 3 | 3 | 666 |
+
+Scenario: Scenario with rich steps
+	# Shopping!
+	When I make a note
+		"""
+		Don't forget to buy bread
+		And milk
+		"""
+	Then I should buy the following
+		| Product name |
+		| Bread        |
+		| Milk         |

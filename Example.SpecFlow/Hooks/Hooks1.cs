@@ -1,8 +1,9 @@
-﻿using ReportPortal.Shared;
+﻿using ReportPortal.Client.Abstractions.Models;
+using ReportPortal.Client.Abstractions.Responses;
+using ReportPortal.Shared;
 using ReportPortal.SpecFlowPlugin;
 using ReportPortal.SpecFlowPlugin.EventArguments;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using TechTalk.SpecFlow;
@@ -34,9 +35,9 @@ namespace Example.SpecFlow.Hooks
         {
             if (e.ScenarioContext.TestError != null && e.ScenarioContext.ScenarioInfo.Title == "System Error")
             {
-                e.FinishTestItemRequest.Issue = new ReportPortal.Client.Models.Issue
+                e.FinishTestItemRequest.Issue = new Issue
                 {
-                    Type = ReportPortal.Client.Models.WellKnownIssueType.SystemIssue,
+                    Type = WellKnownIssueType.SystemIssue,
                     Comment = "my custom system error comment"
                 };
             }
@@ -45,13 +46,13 @@ namespace Example.SpecFlow.Hooks
         private static void ReportPortalAddin_BeforeFeatureStarted(object sender, TestItemStartedEventArgs e)
         {
             // Adding feature tag on runtime
-            e.StartTestItemRequest.Tags.Add("runtime_feature_tag");
+            e.StartTestItemRequest.Attributes.Add(new ItemAttribute { Value = "runtime_feature_tag" });
         }
 
         private static void ReportPortalAddin_BeforeScenarioStarted(object sender, TestItemStartedEventArgs e)
         {
             // Adding scenario tag on runtime
-            e.StartTestItemRequest.Tags.Add("runtime_scenario_tag");
+            e.StartTestItemRequest.Attributes.Add(new ItemAttribute { Value = "runtime_scenario_tag" });
         }
 
         [AfterScenario]
@@ -60,7 +61,7 @@ namespace Example.SpecFlow.Hooks
             if (context.ScenarioExecutionStatus == ScenarioExecutionStatus.TestError)
             {
                 var filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\cat.png";
-                Bridge.LogMessage(ReportPortal.Client.Models.LogLevel.Debug, "This cat came from AfterScenario hook {rp#file#" + filePath + "}");
+                Log.Debug("This cat came from AfterScenario hook {rp#file#" + filePath + "}");
             }
         }
 
