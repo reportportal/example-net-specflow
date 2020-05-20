@@ -21,13 +21,13 @@ namespace Example.SpecFlow.StepDefenitions
         [Given("I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
         {
-            using (var scope = Log.BeginNewScope("Searching for calculator..."))
+            using (var scope = Log.BeginScope("Searching for calculator..."))
             {
                 scope.Debug("Where is calculator?");
                 Log.Info("Yeah, found it.");
                 scope.Debug($"Typing '{number}'..");
 
-                using (var scope2 = scope.BeginNewScope($"Searching '{number}' button.."))
+                using (var scope2 = scope.BeginScope($"Searching '{number}' button.."))
                 {
                     Log.Error("I lost my button :(");
                     scope2.Warn("lucky next time.");
