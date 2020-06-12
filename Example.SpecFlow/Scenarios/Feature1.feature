@@ -5,6 +5,7 @@
 
 @mytag
 Scenario: Add two numbers
+This is scenario description
 	Given I have entered 50 into the calculator
 	And I have entered 70 into the calculator
 	When I press add
