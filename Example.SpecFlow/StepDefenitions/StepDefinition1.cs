@@ -32,7 +32,7 @@ namespace Example.SpecFlow.StepDefenitions
                     Log.Error("I lost my button :(");
                     scope2.Warn("lucky next time.");
 
-                    scope2.Status = ReportPortal.Shared.Logging.LogScopeStatus.Skipped;
+                    scope2.Status = ReportPortal.Shared.Execution.Logging.LogScopeStatus.Skipped;
                 }
             }
         }
