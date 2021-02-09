@@ -36,6 +36,7 @@ phases:
          - echo Build started on `date`
          - ls
          - find . -type f | wc -l
+         - dotnet build
          - dotnet test
          - find . -type f | wc -l
          - cd Example.SpecFlow
