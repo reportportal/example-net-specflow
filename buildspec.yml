@@ -1,0 +1,41 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+         - apt-get update
+         - apt install wget
+         - apt install -y testng
+         - apt-get install -y nunit-console
+         - curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+         - echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+         - apt -y update
+         - apt -y install google-chrome-stable
+         - wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+         - unzip chromedriver_linux64.zip
+         - mv chromedriver /usr/bin/chromedriver
+         - chown root:root /usr/bin/chromedriver
+         - chmod +x /usr/bin/chromedriver
+         - wget https://selenium-release.storage.googleapis.com/3.13/selenium-server-standalone-3.13.0.jar
+         - pwd
+         - ls
+         - google-chrome --version
+         - chromedriver --version
+         - wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+         - dpkg -i packages-microsoft-prod.deb
+         - add-apt-repository universe
+         - apt install -y apt-transport-https
+         - apt update
+         - apt install -y dotnet-sdk-5.0
+         - apt install -y unzip xvfb libxi6 libgconf-2-4
+         - dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+         
+  build:
+    commands:
+         - echo Build started on `date`
+         - ls
+         - dotnet test
+         - cd Example.SpecFlow
+         - livingdoc SpecFlow.json
+         
