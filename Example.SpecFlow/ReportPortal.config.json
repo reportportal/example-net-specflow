@@ -2,10 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/reportportal/agent-net-specflow/master/ReportPortal.SpecFlowPlugin/ReportPortal.config.schema",
   "enabled": true,
 	"server": {
-		"url": "https://web.demo.reportportal.io/api/v1/",
+		"url": "https://demo.reportportal.io/api/v1/",
 		"project": "default_personal",
     "authentication": {
-      "uuid": "42d66650-2184-47b7-8317-f92581b8f624"
+      "uuid": "ee0bd0ee-537a-4a86-9b43-f35605fda807"
     }
 	},
   "launch": {
