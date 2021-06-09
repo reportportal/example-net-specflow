@@ -41,6 +41,15 @@ namespace Example.SpecFlow.Hooks
                     Comment = "my custom system error comment"
                 };
             }
+            // put scenario failure reason into RP defect comment
+            else if (e.ScenarioContext.TestError != null)
+            {
+                e.FinishTestItemRequest.Issue = new Issue
+                {
+                    Type = WellKnownIssueType.ToInvestigate,
+                    Comment = e.ScenarioContext.TestError.Message
+                };
+            }
         }
 
         private static void ReportPortalAddin_BeforeFeatureStarted(object sender, TestItemStartedEventArgs e)
